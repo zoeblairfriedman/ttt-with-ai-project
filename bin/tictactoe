@@ -1,3 +1,12 @@
 #!/usr/bin/env ruby
 
 require_relative '../config/environment'
+
+puts "Are you ready for some Tic Tac Toe?!"
+puts "What kind of gameplay, 0, 1, or 2 players"
+#then asks the user who should go first and be "x"
+#use input it inialize a game with appr players and tokens
+#when the game is over
+    #prompt to see if they want to go again?
+    #allow them to choose a new configuration
+    #if they don't want to, exit program

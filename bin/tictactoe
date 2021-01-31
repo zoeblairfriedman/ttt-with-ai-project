@@ -3,10 +3,27 @@
 require_relative '../config/environment'
 
 puts "Are you ready for some Tic Tac Toe?!"
-puts "What kind of gameplay, 0, 1, or 2 players"
-#then asks the user who should go first and be "x"
-#use input it inialize a game with appr players and tokens
-#when the game is over
-    #prompt to see if they want to go again?
-    #allow them to choose a new configuration
-    #if they don't want to, exit program
+puts "What kind of gameplay, 0, 1, or 2 players?"
+players = gets.chomp
+if players == "0"
+    puts "You asked for it - DUMB COMPUTER BATTLE!"
+    Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Computer.new("O"), Board.new).play
+elsif players == "1"
+    puts "Who should go first and be 'X'? Type 'Me'? or 'You'?"
+    if gets.chomp == "Me"
+        Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Computer.new("O"), Board.new).play
+    else
+        Game.new(player_1 = Players::Computer.new("X"), player_2 = Players::Human.new("O"), Board.new).play
+    end
+elsif players == "2"
+    puts "Player 1 will be 'X' and Player 2 will be 'O'! Deal with it."
+    Game.new(player_1 = Players::Human.new("X"), player_2 = Players::Human.new("O"), board = Board.new).play
+end
+
+
+# puts "Another round? 'yes' or 'no'?"
+# if gets.chomp == "yes"
+#     #blah
+# else
+#     puts "Whatever, Nerd."
+# end

@@ -48,7 +48,7 @@ end
 
 def valid_move?(input)
     if input.to_i != 0
-    turn_count >= 1 && turn_count <= 9 && !taken?(input)
+    turn_count >= 0 && turn_count <= 9 && !taken?(input)
     end
 end
 
